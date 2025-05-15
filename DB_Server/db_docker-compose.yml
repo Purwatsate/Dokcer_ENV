@@ -8,6 +8,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ant
       MONGO_INITDB_ROOT_PASSWORD: 1qaz!QAZ
+    volumes:
+      - mongo_data:/data/db
 
   postgres:
     image: postgres
@@ -23,3 +25,4 @@ services:
 
 volumes:
   pgdata:
+  mongo_data:
