@@ -8,3 +8,18 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ant
       MONGO_INITDB_ROOT_PASSWORD: 1qaz!QAZ
+
+  postgres:
+    image: postgres
+    container_name: my-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ant
+      POSTGRES_PASSWORD: 1qaz!QAZ
+      POSTGRES_DB: mydatabase
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
