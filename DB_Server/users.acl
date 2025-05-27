@@ -1,5 +1,2 @@
-# Disable the default user
 user default off
-
-# Enable and configure user
 user ant on >1qaz!QAZ ~* +@all
