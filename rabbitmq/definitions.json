@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "name": "ant",
+      "password": "1qaz!QAZ",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "latall_dev_env"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "ant",
+      "vhost": "latall_dev_env",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ]
+}

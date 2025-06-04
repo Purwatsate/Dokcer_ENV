@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-server
+    ports:
+      - "5672:5672" # RabbitMQ AMQP
+      - "15672:15672" # RabbitMQ Management UI
+    volumes:
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./definitions.json:/etc/rabbitmq/definitions.json
+    environment:
+      RABBITMQ_CONFIG_FILE: /etc/rabbitmq/rabbitmq
+      RABBITMQ_DEFINITIONS_FILE: /etc/rabbitmq/definitions.json
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: '-rabbitmq_management load_definitions "/etc/rabbitmq/definitions.json"'
