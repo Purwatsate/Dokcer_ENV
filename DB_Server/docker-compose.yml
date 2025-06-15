@@ -11,6 +11,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: 1qaz!QAZ
     volumes:
       - mongo_data:/data/db
+    restart: unless-stopped
 
   postgres:
     image: postgres
@@ -23,6 +24,7 @@ services:
       POSTGRES_DB: mydatabase
     volumes:
       - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
 
   redis:
     image: redis:7.2
