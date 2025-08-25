@@ -1,2 +1,2 @@
-user default off
+user default on nopass ~* +@all
 user ant on >1qaz!QAZ ~* +@all
