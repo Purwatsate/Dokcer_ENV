@@ -26,19 +26,19 @@ services:
       - pgdata:/var/lib/postgresql/data
     restart: unless-stopped
 
-  redis:
-    image: redis:7.2
-    container_name: redis-acl
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-      - ./redis.conf:/usr/local/etc/redis/redis.conf
-      - ./users.acl:/usr/local/etc/redis/users.acl
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
-    restart: unless-stopped
+  # redis:
+  #   image: redis:7.2
+  #   container_name: redis-acl
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
+  #     - ./redis.conf:/usr/local/etc/redis/redis.conf
+  #     - ./users.acl:/usr/local/etc/redis/users.acl
+  #   command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+  #   restart: unless-stopped
 
 volumes:
   pgdata:
   mongo_data:
-  redis_data:
+  # redis_data:
